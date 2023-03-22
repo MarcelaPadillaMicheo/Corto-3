@@ -1,0 +1,152 @@
+// EJERCICIO 1
+
+#include <stdio.h>
+
+int main()
+{
+    char a[] = "Ana Marcela Padilla Micheo";
+    int b = 21939;
+    printf("Mi nombre completo es %s y mi carné es %d\n",a,b);
+    return 0;
+}
+
+
+// EJERCICIO 2
+
+#include <stdio.h>
+
+int main() {
+    float celsius, fahrenheit;
+    
+    printf("Ingrese la temperatura en  Celsius: ");
+    scanf("%f", &celsius);
+    
+    fahrenheit = (celsius * 1.8) + 32;
+    
+    printf("%.2f grados Celsius son %.2f grados Fahrenheit\n", celsius, fahrenheit);
+    
+    return 0;
+}
+
+// EJERCICIO 3
+
+#include <stdio.h>
+
+int main() {
+    int n, i, term1 = 0, term2 = 1, siguiente;
+
+    printf("Ingrese el número n de la serie de Fibonacci para generar: ");
+    scanf("%d", &n);
+
+    printf("La Serie de Fibonacci es: ");
+
+    for (i = 1; i <= n; i++) {
+        printf("%d, ", term1);
+        siguiente = term1 + term2;
+        term1 = term2;
+        term2 = siguiente;
+    }
+
+    return 0;
+ 
+ // EJERCICIO 4
+ // main.c
+ 
+ 
+#include <stdio.h>
+#include "add.h"
+
+
+int main()
+{
+    float a, b;
+    printf("Ingrese dos numeros: ");
+    scanf("%f %f", &a, &b);
+
+    printf("Valor de PI: %.5f\n", PI);
+    printf("Suma: %.2f\n", sumar(a, b));
+    printf("Resta: %.2f\n", restar(a, b));
+    printf("Multiplicacion: %.2f\n", multiplicar(a, b));
+    if (b == 0 ) {
+        printf ("División:  No es posible dividir entre 0");
+    }
+    else
+    printf("Division: %.2f\n", dividir(a, b));
+    
+
+    return 0;
+}
+
+// add.h
+
+#include <stdio.h>
+#include "add.h"
+
+
+int main()
+{
+    float a, b;
+    printf("Ingrese dos numeros: ");
+    scanf("%f %f", &a, &b);
+
+    printf("Valor de PI: %.5f\n", PI);
+    printf("Suma: %.2f\n", sumar(a, b));
+    printf("Resta: %.2f\n", restar(a, b));
+    printf("Multiplicacion: %.2f\n", multiplicar(a, b));
+    if (b == 0 ) {
+        printf ("División:  No es posible dividir entre 0");
+    }
+    else
+    printf("Division: %.2f\n", dividir(a, b));
+    
+
+    return 0;
+}
+//add.c
+#include "add.h"
+
+
+float sumar(float a, float b)
+{
+    return a + b;
+}
+
+float restar(float a, float b)
+{
+    return a - b;
+}
+
+float multiplicar(float a, float b)
+{
+    return a * b;
+}
+
+float dividir(float a, float b)
+{
+    return a / b;
+}
+
+// EJERCICIO 5
+#include <stdio.h>
+
+int main() {
+    int N = 10; 
+    int array[N];
+    int i;
+
+    
+    for (i = 0; i < N; i++) {
+        printf("Ingrese el valor del elemento %d: ", i+1);
+        scanf("%d", &array[i]);
+    }
+
+    //PUNTERO
+     int *P = &array[0];
+
+
+    for (i = 0; i < N; i++) {
+        printf("%d ", *(P+i)*2);
+    }
+
+    return 0;
+}
